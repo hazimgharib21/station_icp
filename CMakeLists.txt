@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 2.8.3)
 project(station_icp)
 
 ## Compile as C++11, supported in ROS Kinetic and newer
-# add_compile_options(-std=c++11)
+add_compile_options(-std=c++11)
 
 ## Find catkin macros and libraries
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
@@ -199,9 +199,3 @@ include_directories(
 add_executable(station_icp src/station_icp.cpp)
 target_link_libraries(station_icp ${catkin_LIBRARIES})
 
-#add dynamic reconfigure
-generate_dynamic_reconfigure_options(
-  cfg/test.cfg
-)
-
-add_dependencies(example_node ${PROJECT_NAME}_gencfg)
